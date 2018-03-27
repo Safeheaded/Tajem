@@ -1,0 +1,22 @@
+@mixin hover($color: $c_main){
+    color: $color;
+    cursor: pointer;
+}
+
+@mixin select{
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+@mixin line($col: $c_main, $wid: 100px){
+            content: '';
+            display: block;
+            height: 3px;
+            width: $wid;
+            position: absolute;
+            left: 50%;
+            background-color: $col;
+            transform: translateX(-50%);
+}

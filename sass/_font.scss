@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'tajam-icon';
+  src:  url('../fonts/tajam-icon.eot?quqong');
+  src:  url('../fonts/tajam-icon.eot?quqong#iefix') format('embedded-opentype'),
+    url('../fonts/tajam-icon.ttf?quqong') format('truetype'),
+    url('../fonts/tajam-icon.woff?quqong') format('woff'),
+    url('../fonts/tajam-icon.svg?quqong#tajam-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.tajam-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'tajam-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tajam-logo:before {
+  content: "\e900";
+}

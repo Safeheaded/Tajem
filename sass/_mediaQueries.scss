@@ -1,0 +1,117 @@
+/* Small devices (tablets, 768px and up) */
+
+@media #{$sm-max}{
+    #first-section{
+        .learn-more{
+            margin: auto;
+        }
+    }
+    #nav-content{
+        visibility: hidden;
+        height: 0;
+    }
+    #burger-menu{
+        visibility: visible;
+    }
+    #second-section{
+    #img-and-text{
+        display: block;
+        #img-cont{
+            display: block;
+            width: 100%;
+            max-width: 230px;
+            margin: auto;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        #second-text{
+            display: block;
+            width: 100%;
+            .learn-more{
+                margin: auto;
+    }
+        }
+    }
+}
+#fifth-section{
+    #employ{
+        margin-bottom: 30px;
+    }
+}
+#sixth-section{
+    h1{
+        line-height: 150px;
+        float: left;
+        text-align: center;
+        margin: 0;
+    }
+    span{
+        float: right;
+        line-height: 150px;
+        text-align: center;
+    }
+}
+}
+@media #{$md-min}{
+    #first-section{
+        .learn-more{
+            margin: auto;
+        }
+    }
+    #nav-content{
+        visibility: visible;
+    }
+    #burger-menu{
+        visibility: hidden;
+    }
+    #second-section{
+    #img-and-text{
+        display: table;
+        #img-cont{
+            display: table-cell;
+            width: 20%;
+            max-width: 230px;
+            vertical-align: middle;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        #second-text{
+            display: table-cell;
+            vertical-align: middle;
+            width: 70%;
+        }
+    }
+}
+#sixth-section{
+    h1{
+        line-height: 150px;
+        float: left;
+        text-align: center;
+        margin: 0;
+    }
+    span{
+        float: right;
+        line-height: 150px;
+        text-align: center;
+    }
+}
+}
+@media #{$xs-max}{
+    #sixth-section{
+    h1{
+        line-height: 75px;
+        text-align: center;
+        float: none;
+        margin: 0;
+    }
+    span{
+        line-height: 75px;
+        float: none;
+        text-align: center;
+    }
+}
+}

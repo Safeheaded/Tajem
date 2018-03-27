@@ -1,0 +1,8 @@
+
+.icon-heart-empty:before { content: '\e800'; } /* '' */
+.icon-desktop:before { content: '\f108'; } /* '' */
+.icon-mobile:before { content: '\f10b'; } /* '' */
+.icon-quote-left:before { content: '\f10d'; } /* '' */
+.icon-gamepad:before { content: '\f11b'; } /* '' */
+.icon-brush:before { content: '\f1fc'; } /* '' */
+.icon-chart-pie:before { content: '\f200'; } /* '' */

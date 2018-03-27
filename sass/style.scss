@@ -1,0 +1,708 @@
+/*
+    ======= 
+    IMPORTS
+    =======
+*/
+@import '_font';
+@import '_mediaQueries_SetuUp';
+@import '_mediaQueries';
+@import '_mixins';
+/*
+    =========
+    VARIABLES
+    =========
+*/
+$nav_height: 80px;
+
+$c_main: rgb(3, 224, 208);
+$c_grey: #576161;
+$c_lemo: rgba(252, 252, 252, 0.2);
+$c_1: rgb(182,182,182);
+$c_2: rgb(172,172,172);
+$c_3: rgb(161,161,161);
+$c_4: rgb(138,138,138);
+$c_5: rgb(182,182,182);
+$c_6: rgb(164,164,164);
+
+$t_time: 0.5s;
+$t_timing: ease;
+
+$g_second: linear-gradient(to right, rgba(9,5,47,0.9), rgba(49,29,94,0.9));
+
+$p_size: 140px;
+/*
+    =======
+    GENERAL
+    =======
+*/
+.relative{
+    position: relative;
+}
+p{
+    font-size: 18px;
+    color: black;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+.no-padding{
+    padding: 0;
+}
+.width{
+    width: 100%;
+}
+.height{
+    height: 100%;
+}
+li{
+    @include select;
+}
+span{
+    font-size: 18px;
+}
+.learn-more{
+        border: 2px solid $c_main;
+        background: none;
+        border-radius: 4px;
+        text-align: center;
+        color: $c_main;
+        padding: 15px;
+        font-size: 20px;
+        max-width: 200px;
+        text-transform: uppercase;
+        transition: background-color $t_time $t_timing;
+        @include select;
+        &:hover{
+            background-color: $c_lemo;
+            cursor: pointer;
+        }
+        }
+/*
+    =======
+    FLOAT CLASSES
+    =======
+*/
+.sticky{
+    position: fixed;
+    top: 0;
+    left:0;
+    background-color: white;
+    box-shadow: 0 30px 50px -28px black;
+    height: 60px;
+    z-index: 200;
+    ul, #left-section, #burger-menu{
+        line-height: 60px;
+        color: black;
+    }
+}
+    .no-sticky{
+        height: $nav_height;
+        position: static;
+        ul, #site-title, #logo, #burger-menu{
+            line-height: 80px;
+    }
+    }
+    .m-nav-hide{
+        top: -120vh;
+    }
+    .m-nav-show{
+        top: 0vh;
+    }
+/*
+    =============
+    MOBILE NAVBAR
+    =============
+*/
+    #mobile-nav{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 250;
+        background-color: white;
+        transition: top $t_time $t_timing;
+        #close{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: black;
+            font-size: 28px;
+            transition: color $t_time $t_timing;
+            &:hover{
+                @include hover;
+            }
+        }
+        ul{
+            color: black;
+            font-size: 28px;
+            list-style-type: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            li{
+                margin-top: 15px;
+                text-transform: uppercase;
+                line-height: 0.99;
+                text-align: center;
+                transition: color $t_time $t_timing;
+                &:hover{
+                    @include hover;
+                }
+            }
+        }
+    }
+/*
+    =============
+    FIRST SECTION
+    =============
+*/
+#first-section{
+    background-image: url(../img/Head_image.png);
+    background-size: cover;
+    min-height: 100vh;
+    background-position: center;
+}
+.filler{
+    @extend .width;
+}
+#f-1{
+    background: linear-gradient(to right, rgba(46, 42, 78, 0.9), rgba(80, 63, 117, 0.9));
+    min-height: 100vh;
+}
+#nav-container{
+    width: 100%;
+    height: 120px;
+    padding-top: 40px;
+}
+#primary-nav{
+    @extend .width;
+    transition: background-color $t_time, height $t_time;
+}
+#inner-nav{
+    height: 100%;
+    font-size: 40px;
+    color: white;
+    #left-section{
+        transition: color $t_time $t_timing;
+        @include select;
+        &:hover{
+            @include hover;
+        }
+    }
+    #site-title{
+        float: left;
+        @extend .height;
+        margin-left: 15px;
+        font-size: 35px;
+        transition: color $t_time $t_timing;
+    }   
+    #nav-content{
+        float: right;
+        font-size: 18px;
+        ul{
+            list-style-type: none;
+            li{
+                display: inline-block;
+                @extend .height;
+                margin-left: 5px; 
+                text-transform: uppercase;
+                transition: color $t_time $t_timing;
+                &:hover{
+                    @include hover;
+                }
+            }
+        }
+    }
+    #logo{
+        font-size: 60px;
+        float: left;
+        @extend .height;
+        transition: color $t_time $t_timing;
+    }
+}
+    #burger-menu{
+        float: right;
+        color: white;
+        font-size: 30px;
+        transition: color $t_time $t_timing;
+        @extend .height;
+        &:hover{
+            @include hover;
+        }
+    }
+/*
+==============
+CAROUSEL SECTION
+==============
+*/
+
+#carousel-container{
+    min-height: 80vh;
+    padding: 70px 10px 0 10px;
+    .carousel-indicators{
+        .active{
+            background-color: $c_main;
+            border-color: $c_main;
+        }
+    }
+    .item{
+        color: white;
+        text-align: center;
+        min-height: 50vh;
+        font-size: 18px;
+        margin-bottom: 50px;
+        .carousel-text{
+            margin-top: 25px;
+            margin-bottom: 35px;
+        }
+        h1{
+            &::after{
+                @include line($c_main);
+                margin-top: 9px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+/*
+==============
+SECOND SECTION
+==============
+*/
+#second-section{
+    padding-top: 60px;
+    margin-bottom: 60px;
+    font-size: 25px;
+    #img-and-text{
+        display: table;
+        #img-cont{
+            max-width: 230px;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        #second-text{
+            padding-left: 5%;
+            font-size: 18px;
+            h1{
+                font-size: 40px;
+            }
+        }
+    }
+}
+/*
+    =============
+    THIRD SECTION
+    =============
+*/
+#third-section{
+    height: 550px;
+    width: 100%;
+    background-image: url(../img/sct-3.png);
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    position: relative;
+    #f-2{
+        background: $g_second;
+        @extend .height;
+        #play-container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            #play{
+                width: $p_size;
+                height: $p_size;
+                border: 3.5px solid white;
+                border-radius: 50%;
+                margin: auto;
+                div{
+                    font-size: 100px;
+                    text-align: center;
+                    color: black;
+                    text-align: center;
+                    @extend .width;
+                    @extend .height;
+                    line-height: $p_size - 15;
+                }
+            }
+            h1{
+                text-align: center;
+                color: white;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+/*
+    =============
+    FOURTH SECTION
+    =============
+*/
+
+#fourth-section{
+    padding-top: 60px;
+    text-align: center;
+    font-size: 17px;
+    .row{
+        min-height: 350px;
+    }
+    .row:first-of-type{
+        padding-top: 60px;
+    }
+    h1{
+        text-transform: uppercase;
+    }
+    #f-second{
+        font-size: 19px;
+        &::after{
+            @include line($c_grey);
+            margin-top: 15px;
+        }
+    }
+    article{
+        height: 100%;
+        span:first-child{
+            font-size: 100px;
+            color: black;
+        }
+        span:last-child{
+            color: black;
+            font-size: 17px;
+        }
+        h1{
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+/*
+    =============
+    FIFTH SECTION
+    =============
+*/
+
+#fifth-section{
+    padding-top: 60px;
+    #fifth-inner{
+        min-height: 712px;
+        width: 100%;
+        background-image: url(../img/sct-5.png);
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        #f-3{
+            min-height: 712px;
+            background: $g_second;
+            padding-bottom: 30px;
+            h1{
+                margin-top: 60px;
+                text-transform: uppercase;
+            }
+            span{
+                margin: auto;
+                width: 100%;
+            }
+            #first-line{
+                &::after{
+                    @include line($c_grey, 80px);
+                }
+            }
+            .row{
+                margin-top: 70px;
+                margin-bottom: 40px;
+            }
+            .photo{
+                width: 200px;
+                height: 200px;
+                background-color: white;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+            }
+            hr{
+                border-width: 1px;
+                opacity: 0.5
+            }
+            #employ{
+                text-transform: uppercase;
+            }
+            .learn-more{
+                margin: auto;
+                margin-top: 30px;
+            }
+        }
+    }
+}
+/*
+    =============
+    SIXTH SECTION
+    =============
+*/
+
+#sixth-section{
+    .blank-space{
+        background-color: white;
+        min-height: 150px;
+        .learn-more{
+            margin: auto;
+            margin-top: 30px;
+        }
+        h1{
+            text-transform: uppercase;
+        }
+        span{
+            transition: color $t_time $t_timing;
+        &:hover{
+            @include hover;
+        }
+        }
+    }
+    .g-block{
+        height: 130px;
+    }
+    .row div:nth-child(2){
+        background-color: $c_1;
+    }
+    .row div:nth-child(3){
+        background-color: $c_2;
+    }
+    .row div:nth-child(4){
+        background-color: $c_3;
+    }
+    .row div:nth-child(5){
+        background-color: $c_4;
+    }
+    .row div:nth-child(6){
+        background-color: $c_5;
+    }
+    .row div:nth-child(7){
+        background-color: $c_6;
+    }
+    .row div:nth-child(13){
+        background-color: $c_1;
+    }
+    .row div:nth-child(12){
+        background-color: $c_2;
+    }
+    .row div:nth-child(11){
+        background-color: $c_3;
+    }
+    .row div:nth-child(10){
+        background-color: $c_4;
+    }
+    .row div:nth-child(9){
+        background-color: $c_5;
+    }
+    .row div:nth-child(8){
+        background-color: $c_6;
+    }
+}
+
+/*
+    =============
+    SEVENTH SECTION
+    =============
+*/
+
+#seventh-section{
+    #seventh-inner{
+        background-image: url(../img/sct-7.png);
+        background-size: cover;
+        background-position: center;
+        min-height:500px;
+    }
+    #f-4{
+        background: $g_second;
+        min-height:500px;
+        text-align: center;
+        #quote{
+            color: white;
+            font-size: 70px;
+            margin-top: 20px;
+        }
+        span{
+            color: white;
+        }
+        h3{
+            color: white;
+            text-transform: uppercase;
+        }
+        h4{
+            color: white;
+            text-transform: uppercase;
+        }
+        ul{
+            padding:0;
+            margin-top: 60px;
+            min-height: 70px;
+            li{
+                height: 45px;
+                width: 45px;
+                display: inline-block;
+                background-size: cover;
+                margin: 0 10px;
+                line-height:70px;
+                text-align: center;
+            }
+            li:first-child, li:last-child{
+                color: black;
+                font-size: 40px;
+            }
+            li:nth-child(2){
+                background-image: url(../img/ph-3.png);
+                margin-bottom: 12.5px;
+            }
+            li:nth-child(3){
+                background-image: url(../img/ph-2.png);
+                margin-bottom: 12.5px;
+            }
+            li:nth-child(4){
+                background-image: url(../img/ph-1.png);
+                height: 70px;
+                width: 70px;
+            }
+            li:nth-child(5){
+                background-image: url(../img/ph-4.png);
+                margin-bottom: 12.5px;
+            }
+            li:nth-child(6){
+                background-image: url(../img/ph-5.png);
+                margin-bottom: 12.5px;
+            }
+        }
+    }
+}
+/*
+    =============
+    EIGHT SECTION
+    =============
+*/
+
+#eight-section{
+    padding-top: 60px;
+    span{
+        text-transform: uppercase;
+        font-size: 40px;
+        margin-top: 20px;
+        display: block;
+    }
+    form{
+        padding-top: 20px;
+        .learn-more{
+            width: 200px;
+            margin-top: 20px;
+        }
+        input{
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            border: 1px solid lighten($c_grey, 50%);
+            border-radius: 10px;
+            font-size: 20px;
+            box-sizing: border-box;
+            padding-left: 20px;
+            &::-webkit-input-placeholder{
+                color: lighten($c_grey, 25%);
+            }
+        }
+        input:first-child{
+            margin-top: 0px;
+        }
+        textarea{
+            margin-top: 20px;
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            border: 1px solid lighten($c_grey, 50%);
+            font-size: 20px;
+            padding-left: 20px;
+            &::-webkit-input-placeholder{
+                color: lighten($c_grey, 25%);
+            }
+        }
+    }
+    img{
+        &:first-child{
+            margin-top: 20px;
+        }
+        width: 80%;
+        height: auto;
+        margin-left: 10%;
+        margin-top: 40px;
+    }
+}
+
+/*
+    =============
+    NINETH SECTION
+    =============
+*/
+
+#nineth-section{
+    margin-top: 60px;
+    background-image: url(../img/sct-9.png);
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+    color: white;
+            .filler{
+                background: $g_second;
+                min-height: 400px;
+                .row{
+                    padding-top: 100px;
+                }
+                #end-tajam-logo{
+                    font-size: 60px;
+                    float: left;
+                }
+                #end-title{
+                    float: left;
+                }
+                .end-content{
+                    font-size: 17px;
+                    color: white;
+                    margin-top: 40px;
+                }
+                span{
+                    font-size: 17px;
+                }
+                #tel{
+                    margin-top: 20px;
+                    text-decoration: none;
+                }
+                input{
+                    font-size: 20px;
+                    height: 50px;
+                    text-align: center;
+                    width: 70%;
+                    background-color: rgba(0,0,0,0);
+                    border-radius: 3px;
+                    border: 2px solid $c_grey;
+                    margin-top: 50px;
+                    float: left;
+                }
+                #send_btn{
+                    width: 20%;
+                    height: 50px;
+                    background-color: rgba(255,255,255, 0.4);
+                    float: right;
+                    color: black;
+                    font-size: 30px;
+                    line-height: 50px;
+                    border-radius: 2px;
+                    margin-top: 50px;
+                    &:hover{
+                        cursor: pointer;
+                    }
+
+                }
+            }
+}
